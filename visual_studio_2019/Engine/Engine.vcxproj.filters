@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{7041edb1-0899-44e1-bc6b-af39e16b03cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{1c6968c5-4365-4984-80e4-191a0edaced0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\glad">
+      <UniqueIdentifier>{70ae491a-b378-4761-a111-a6ff30ec18b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\imgui">
+      <UniqueIdentifier>{acfb2f25-7c3b-482c-90ee-d044077a4002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="asset_loader">
+      <UniqueIdentifier>{0051f4b8-bddc-47ae-8cf8-1828f926db5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{8769bb92-47cf-4c7e-9755-41bc3f99d733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\imgui\imnode">
+      <UniqueIdentifier>{f0b5288f-8cd7-49c3-9601-3e7b9ab5432d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gui">
+      <UniqueIdentifier>{3a17f272-f179-41d9-ac04-9cb10eaed3c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\backend">
+      <UniqueIdentifier>{d343c0a5-5521-4f2b-a249-69f631f2acff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\renderer">
+      <UniqueIdentifier>{c4229403-34dc-4a7a-a597-b48748b709a4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Application.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_demo.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_draw.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_tables.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_widgets.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\glad\glad.c">
+      <Filter>external\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Tools\AssetLoader\src\AssetLoader.cpp">
+      <Filter>asset_loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Renderer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imnodes.cpp">
+      <Filter>external\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\example\color_node_editor.cpp">
+      <Filter>external\imgui\imnode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\GUINodeEditor.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\RawTypes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\backends\Type.cpp">
+      <Filter>src\backend</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Application.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imconfig.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imgui.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imgui_internal.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_rectpack.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_textedit.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_truetype.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3_loader.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Tools\AssetLoader\src\AssetLoader.h">
+      <Filter>asset_loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Tools\AssetLoader\src\IAssetLoader.h">
+      <Filter>asset_loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\IRenderer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imnodes.h">
+      <Filter>external\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\graph.h">
+      <Filter>external\imgui\imnode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\node_editor.h">
+      <Filter>external\imgui\imnode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GUINodeEditor.h">
+      <Filter>src\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\RawTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\backends\IBuffer.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\backends\IType.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\backends\Defsr.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ShaderUniformManager.h">
+      <Filter>src\renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

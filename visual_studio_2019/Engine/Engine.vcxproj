@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1177df40-a617-450f-b342-6d9ee90b6673}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\ThirdParty\glm\include;$(SolutionDir)..\..\ThirdParty\glfw-3.3.8\include;$(SolutionDir)..\..\ThirdParty\glad\include;$(SolutionDir)..\..\ThirdParty\assimp-5.2.5\include;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolitionDir)..\..\ThirdParty\glfw-3.3.8\lib\Debug;$(SolitionDir)..\..\ThirdParty\assimp-5.2.5\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimpd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\..\assets" "$(OutDir)assets" /f /d /e /i /y
+xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\ThirdParty\glm\include;$(SolutionDir)..\..\ThirdParty\glfw-3.3.8\include;$(SolutionDir)..\..\ThirdParty\glad\include;$(SolutionDir)..\..\ThirdParty\assimp-5.2.5\include;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolitionDir)..\..\ThirdParty\glfw-3.3.8\lib\Release;$(SolitionDir)..\..\ThirdParty\assimp-5.2.5\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;asset_loader.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\..\assets" "$(OutDir)assets" /f /d /e /i /y
+xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Application.cpp" />
+    <ClCompile Include="..\..\src\backends\Type.cpp" />
+    <ClCompile Include="..\..\src\GUINodeEditor.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\RawTypes.cpp" />
+    <ClCompile Include="..\..\src\Renderer.cpp" />
+    <ClCompile Include="..\..\ThirdParty\glad\glad.c" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\example\color_node_editor.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_demo.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_draw.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_tables.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imnodes.cpp" />
+    <ClCompile Include="..\..\Tools\AssetLoader\src\AssetLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Application.h" />
+    <ClInclude Include="..\..\src\backends\Defsr.h" />
+    <ClInclude Include="..\..\src\backends\IBuffer.h" />
+    <ClInclude Include="..\..\src\backends\IType.h" />
+    <ClInclude Include="..\..\src\GUINodeEditor.h" />
+    <ClInclude Include="..\..\src\IRenderer.h" />
+    <ClInclude Include="..\..\src\RawTypes.h" />
+    <ClInclude Include="..\..\src\ShaderUniformManager.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\graph.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\node_editor.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imconfig.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imgui.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imgui_internal.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imnodes.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_rectpack.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_textedit.h" />
+    <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_truetype.h" />
+    <ClInclude Include="..\..\Tools\AssetLoader\src\IAssetLoader.h" />
+    <ClInclude Include="..\..\Tools\AssetLoader\src\AssetLoader.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
