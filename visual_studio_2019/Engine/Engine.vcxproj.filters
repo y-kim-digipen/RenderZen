@@ -17,32 +17,29 @@
     <Filter Include="external\imgui">
       <UniqueIdentifier>{acfb2f25-7c3b-482c-90ee-d044077a4002}</UniqueIdentifier>
     </Filter>
-    <Filter Include="asset_loader">
-      <UniqueIdentifier>{0051f4b8-bddc-47ae-8cf8-1828f926db5c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="shader">
       <UniqueIdentifier>{8769bb92-47cf-4c7e-9755-41bc3f99d733}</UniqueIdentifier>
     </Filter>
     <Filter Include="external\imgui\imnode">
       <UniqueIdentifier>{f0b5288f-8cd7-49c3-9601-3e7b9ab5432d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\gui">
-      <UniqueIdentifier>{3a17f272-f179-41d9-ac04-9cb10eaed3c4}</UniqueIdentifier>
+    <Filter Include="src\app">
+      <UniqueIdentifier>{29dc1852-61f7-4566-afab-62a358bd20b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\backend">
-      <UniqueIdentifier>{d343c0a5-5521-4f2b-a249-69f631f2acff}</UniqueIdentifier>
+    <Filter Include="src\app\backend">
+      <UniqueIdentifier>{83412d9c-1e64-4f79-b889-09f81ff77f6a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\renderer">
-      <UniqueIdentifier>{c4229403-34dc-4a7a-a597-b48748b709a4}</UniqueIdentifier>
+      <UniqueIdentifier>{601b2cae-1b7c-412e-8c14-592128b0b844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app\scene">
+      <UniqueIdentifier>{d74ccc08-7541-48b1-85c2-b8987ef1c2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app\scene\objects">
+      <UniqueIdentifier>{7008dedc-e1b4-4091-a067-0396d8fc95bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Application.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui.cpp">
       <Filter>external\imgui</Filter>
     </ClCompile>
@@ -67,32 +64,35 @@
     <ClCompile Include="..\..\ThirdParty\glad\glad.c">
       <Filter>external\glad</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Tools\AssetLoader\src\AssetLoader.cpp">
-      <Filter>asset_loader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Renderer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imnodes.cpp">
       <Filter>external\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\example\color_node_editor.cpp">
       <Filter>external\imgui\imnode</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\GUINodeEditor.cpp">
-      <Filter>src\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\RawTypes.cpp">
+    <ClCompile Include="..\..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\backends\Type.cpp">
-      <Filter>src\backend</Filter>
+    <ClCompile Include="..\..\src\App\Renderer.cpp">
+      <Filter>src\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\App\Application.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\App\M1Scene.cpp">
+      <Filter>src\app\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\App\DeferredPassTestScene.cpp">
+      <Filter>src\app\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\App\CameraController.cpp">
+      <Filter>src\app\scene\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\App\Input.cpp">
+      <Filter>src\app\backend</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Application.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imconfig.h">
       <Filter>external\imgui</Filter>
     </ClInclude>
@@ -120,15 +120,6 @@
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3_loader.h">
       <Filter>external\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Tools\AssetLoader\src\AssetLoader.h">
-      <Filter>asset_loader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Tools\AssetLoader\src\IAssetLoader.h">
-      <Filter>asset_loader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\IRenderer.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imnodes.h">
       <Filter>external\imgui</Filter>
     </ClInclude>
@@ -138,23 +129,38 @@
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\node_editor.h">
       <Filter>external\imgui\imnode</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\GUINodeEditor.h">
-      <Filter>src\gui</Filter>
+    <ClInclude Include="..\..\src\App\Application.h">
+      <Filter>src\app</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\RawTypes.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\backends\IBuffer.h">
-      <Filter>src\backend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\backends\IType.h">
-      <Filter>src\backend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\backends\Defsr.h">
-      <Filter>src\backend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\ShaderUniformManager.h">
+    <ClInclude Include="..\..\src\App\Renderer.h">
       <Filter>src\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\Mesh.h">
+      <Filter>src\app\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\Geometry.h">
+      <Filter>src\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\M1Scene.h">
+      <Filter>src\app\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\CameraController.h">
+      <Filter>src\app\scene\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\IScene.h">
+      <Filter>src\app\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\DeferredPassTestScene.h">
+      <Filter>src\app\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\Input.h">
+      <Filter>src\app\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\Light.h">
+      <Filter>src\app\scene\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\App\Object.h">
+      <Filter>src\app\scene\objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

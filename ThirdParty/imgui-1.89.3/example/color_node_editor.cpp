@@ -4,14 +4,23 @@
 #include <imnodes.h>
 #include <imgui.h>
 
-//#include <SDL_keycode.h>
-//#include <SDL_timer.h>
 #include <algorithm>
 #include <cassert>
 #include <chrono>
 #include <cmath>
 #include <vector>
-
+namespace GUI
+{
+    class NodeEditor
+    {
+    public:
+        void Init ();
+        void Update ( float dt );
+        void Cleanup ();
+    private:
+        //example::Graph
+    };
+}
 namespace example
 {
 namespace

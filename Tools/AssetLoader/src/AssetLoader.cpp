@@ -52,7 +52,7 @@ bool AIProcessScene(const aiScene* scene, Mesh* pMesh)
     return true;
 }
 
-bool CPULoadMesh(const char* pFile, Mesh* pMesh)
+bool InitMesh(const char* pFile, Mesh* pMesh)
 {
     assert(pMesh);
     assert(!gDirectory.empty());

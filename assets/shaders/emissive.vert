@@ -10,6 +10,13 @@ layout (std140) uniform cbCamera
     vec3 camPos;
 };
 
+//layout (std140) uniform cbObject
+//{
+//    mat4 toWorldMat1;
+//    vec3 albedo;
+//    bool doUseAlbedoTexture;
+//}
+
 out VS_OUT
 {
     vec4 viewPos;
@@ -19,7 +26,7 @@ out VS_OUT
 } vs_out;
 
 uniform mat4 toWorldMat;
-
+uniform vec3 albedo;
 void main()
 {
     vs_out.viewPos = projectionMat * viewMat * toWorldMat * vec4(vPos, 1.0);

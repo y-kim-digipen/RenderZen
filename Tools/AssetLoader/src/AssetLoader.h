@@ -27,4 +27,4 @@ struct Mesh
 };
 
 void SetMeshDirectory(const char* pDirectory);
-bool CPULoadMesh(const char* pFile, Mesh* pMesh);
+bool InitMesh(const char* pFile, Mesh* pMesh);
