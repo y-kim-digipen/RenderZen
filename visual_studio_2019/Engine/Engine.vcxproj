@@ -85,7 +85,7 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\ThirdParty\glm\include;$(SolutionDir)..\..\ThirdParty\glfw-3.3.8\include;$(SolutionDir)..\..\ThirdParty\glad\include;$(SolutionDir)..\..\ThirdParty\assimp-5.2.5\include;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\ThirdParty\glm\include;$(SolutionDir)..\..\ThirdParty\glfw-3.3.8\include;$(SolutionDir)..\..\ThirdParty\glad\include;$(SolutionDir)..\..\ThirdParty\assimp-5.2.5\include;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3;$(SolutionDir)..\..\ThirdParty\imgui-1.89.3\backends;$(SolutionDir)..\..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -94,7 +94,7 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolitionDir)..\..\ThirdParty\glfw-3.3.8\lib\Release;$(SolitionDir)..\..\ThirdParty\assimp-5.2.5\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;asset_loader.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)..\..\assets" "$(OutDir)assets" /f /d /e /i /y
@@ -104,13 +104,12 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\App\Application.cpp" />
-    <ClCompile Include="..\..\src\App\CameraController.cpp" />
-    <ClCompile Include="..\..\src\App\DeferredPassTestScene.cpp" />
-    <ClCompile Include="..\..\src\App\Input.cpp" />
-    <ClCompile Include="..\..\src\App\M1Scene.cpp" />
-    <ClCompile Include="..\..\src\App\Renderer.cpp" />
+    <ClCompile Include="..\..\src\Application\Application.cpp" />
+    <ClCompile Include="..\..\src\Application\Components\CameraController.cpp" />
+    <ClCompile Include="..\..\src\Application\Scene\DeferredPassTestScene.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\Renderer\Renderer.cpp" />
+    <ClCompile Include="..\..\src\Tools\Input\Input.cpp" />
     <ClCompile Include="..\..\ThirdParty\glad\glad.c" />
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.cpp" />
@@ -125,17 +124,16 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imnodes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\App\Application.h" />
-    <ClInclude Include="..\..\src\App\CameraController.h" />
-    <ClInclude Include="..\..\src\App\DeferredPassTestScene.h" />
-    <ClInclude Include="..\..\src\App\Geometry.h" />
-    <ClInclude Include="..\..\src\App\Input.h" />
-    <ClInclude Include="..\..\src\App\IScene.h" />
-    <ClInclude Include="..\..\src\App\Light.h" />
-    <ClInclude Include="..\..\src\App\Mesh.h" />
-    <ClInclude Include="..\..\src\App\Object.h" />
-    <ClInclude Include="..\..\src\App\Renderer.h" />
-    <ClInclude Include="..\..\src\App\M1Scene.h" />
+    <ClInclude Include="..\..\src\Application\Application.h" />
+    <ClInclude Include="..\..\src\Application\Components\CameraController.h" />
+    <ClInclude Include="..\..\src\Application\Components\Geometry.h" />
+    <ClInclude Include="..\..\src\Application\Components\Object.h" />
+    <ClInclude Include="..\..\src\Application\Scene\DeferredPassTestScene.h" />
+    <ClInclude Include="..\..\src\Application\Scene\IScene.h" />
+    <ClInclude Include="..\..\src\Common\Mesh.h" />
+    <ClInclude Include="..\..\src\Renderer\Renderer.h" />
+    <ClInclude Include="..\..\src\Tools\Input\Input.h" />
+    <ClInclude Include="..\..\src\Tools\Logger\Logger.h" />
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_glfw.h" />
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3.h" />
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\backends\imgui_impl_opengl3_loader.h" />

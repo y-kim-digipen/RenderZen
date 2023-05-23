@@ -1,23 +1,23 @@
-#include "App/Application.h"
-#include "App/Renderer.h"
-#include "App/Input.h"
+#include <iostream>
 
-//gainput::InputManager gInputManager;
+#include "Tools/Logger/Logger.h"
+#include "Application/Application.h"
+#include "Renderer/Renderer.h"
+#include "Tools/Input/Input.h"
 
 int main()
 {
 	gApplication.Init ();
 
 	gRenderer.Init ();
-	Input::Input::Init ( gRenderer.GetGLFWwindow () );
+	Input::Input::Input::Init ( gRenderer.GetGLFWwindow () );
 	gRenderer.Load ();
 
 	gApplication.Load ();
 
 	//gInputManager.SetDisplaySize ( 1920, 1080 );
 
-	while(gApplication.ShouldUpdate() )
-	{
+	while ( gApplication.ShouldUpdate () ) {
 		//gInputManager.Update ();
 		gApplication.Update ();
 		gApplication.Draw ();

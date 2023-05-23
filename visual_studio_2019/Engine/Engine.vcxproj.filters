@@ -5,9 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{7041edb1-0899-44e1-bc6b-af39e16b03cb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external">
       <UniqueIdentifier>{1c6968c5-4365-4984-80e4-191a0edaced0}</UniqueIdentifier>
     </Filter>
@@ -17,26 +14,32 @@
     <Filter Include="external\imgui">
       <UniqueIdentifier>{acfb2f25-7c3b-482c-90ee-d044077a4002}</UniqueIdentifier>
     </Filter>
-    <Filter Include="shader">
-      <UniqueIdentifier>{8769bb92-47cf-4c7e-9755-41bc3f99d733}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external\imgui\imnode">
       <UniqueIdentifier>{f0b5288f-8cd7-49c3-9601-3e7b9ab5432d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\app">
-      <UniqueIdentifier>{29dc1852-61f7-4566-afab-62a358bd20b3}</UniqueIdentifier>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{ba540583-5b7e-4220-937e-7bdc7512a6a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\app\backend">
-      <UniqueIdentifier>{83412d9c-1e64-4f79-b889-09f81ff77f6a}</UniqueIdentifier>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{7041edb1-0899-44e1-bc6b-af39e16b03cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\renderer">
-      <UniqueIdentifier>{601b2cae-1b7c-412e-8c14-592128b0b844}</UniqueIdentifier>
+    <Filter Include="App">
+      <UniqueIdentifier>{a8d51153-f1b2-4c9e-855a-a64314b7efdf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\app\scene">
-      <UniqueIdentifier>{d74ccc08-7541-48b1-85c2-b8987ef1c2ef}</UniqueIdentifier>
+    <Filter Include="Common">
+      <UniqueIdentifier>{30f64e69-c542-4203-873e-2afd84bf32ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\app\scene\objects">
-      <UniqueIdentifier>{7008dedc-e1b4-4091-a067-0396d8fc95bd}</UniqueIdentifier>
+    <Filter Include="App\Scene">
+      <UniqueIdentifier>{50347ba3-08e6-43a4-99e4-84780958d96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Input">
+      <UniqueIdentifier>{754a8856-6bcf-4c7d-91c7-accf6607e323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Logger">
+      <UniqueIdentifier>{ddcc98e4-b4de-41cd-a234-bb548531150d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Components">
+      <UniqueIdentifier>{faa0d173-e8cb-460d-99eb-7ba514e6dbd8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,26 +73,21 @@
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\example\color_node_editor.cpp">
       <Filter>external\imgui\imnode</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\main.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\Application\Application.cpp">
+      <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\App\Renderer.cpp">
-      <Filter>src\renderer</Filter>
+    <ClCompile Include="..\..\src\Application\Scene\DeferredPassTestScene.cpp">
+      <Filter>App\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\App\Application.cpp">
-      <Filter>src\app</Filter>
+    <ClCompile Include="..\..\src\Tools\Input\Input.cpp">
+      <Filter>Tools\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\App\M1Scene.cpp">
-      <Filter>src\app\scene</Filter>
+    <ClCompile Include="..\..\src\Renderer\Renderer.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\App\DeferredPassTestScene.cpp">
-      <Filter>src\app\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\App\CameraController.cpp">
-      <Filter>src\app\scene\objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\App\Input.cpp">
-      <Filter>src\app\backend</Filter>
+    <ClCompile Include="..\..\src\Application\Components\CameraController.cpp">
+      <Filter>App\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,38 +127,35 @@
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\example\node_editor.h">
       <Filter>external\imgui\imnode</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Application.h">
-      <Filter>src\app</Filter>
+    <ClInclude Include="..\..\src\Application\Application.h">
+      <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Renderer.h">
-      <Filter>src\renderer</Filter>
+    <ClInclude Include="..\..\src\Common\Mesh.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Mesh.h">
-      <Filter>src\app\backend</Filter>
+    <ClInclude Include="..\..\src\Application\Scene\DeferredPassTestScene.h">
+      <Filter>App\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Geometry.h">
-      <Filter>src\renderer</Filter>
+    <ClInclude Include="..\..\src\Application\Scene\IScene.h">
+      <Filter>App\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\M1Scene.h">
-      <Filter>src\app\scene</Filter>
+    <ClInclude Include="..\..\src\Tools\Logger\Logger.h">
+      <Filter>Tools\Logger</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\CameraController.h">
-      <Filter>src\app\scene\objects</Filter>
+    <ClInclude Include="..\..\src\Tools\Input\Input.h">
+      <Filter>Tools\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\IScene.h">
-      <Filter>src\app\scene</Filter>
+    <ClInclude Include="..\..\src\Renderer\Renderer.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\DeferredPassTestScene.h">
-      <Filter>src\app\scene</Filter>
+    <ClInclude Include="..\..\src\Application\Components\CameraController.h">
+      <Filter>App\Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Input.h">
-      <Filter>src\app\backend</Filter>
+    <ClInclude Include="..\..\src\Application\Components\Object.h">
+      <Filter>App\Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\App\Light.h">
-      <Filter>src\app\scene\objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\App\Object.h">
-      <Filter>src\app\scene\objects</Filter>
+    <ClInclude Include="..\..\src\Application\Components\Geometry.h">
+      <Filter>App\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
