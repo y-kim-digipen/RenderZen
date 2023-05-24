@@ -61,7 +61,7 @@ private:
 
 	std::vector<Geometry*> pGeometries;
 
-	GUIControl mGuiControl{};
+	GUIControl mGuiControl {};
 };
 
 extern Renderer gRenderer;

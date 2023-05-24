@@ -106,7 +106,7 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
   <ItemGroup>
     <ClCompile Include="..\..\src\Application\Application.cpp" />
     <ClCompile Include="..\..\src\Application\Components\CameraController.cpp" />
-    <ClCompile Include="..\..\src\Application\Scene\DeferredPassTestScene.cpp" />
+    <ClCompile Include="..\..\src\Application\Scene\PBRLightingScene.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Renderer\Renderer.cpp" />
     <ClCompile Include="..\..\src\Tools\Input\Input.cpp" />
@@ -128,9 +128,11 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
     <ClInclude Include="..\..\src\Application\Components\CameraController.h" />
     <ClInclude Include="..\..\src\Application\Components\Geometry.h" />
     <ClInclude Include="..\..\src\Application\Components\Object.h" />
-    <ClInclude Include="..\..\src\Application\Scene\DeferredPassTestScene.h" />
+    <ClInclude Include="..\..\src\Application\Scene\PBRLightingScene.h" />
     <ClInclude Include="..\..\src\Application\Scene\IScene.h" />
+    <ClInclude Include="..\..\src\Common\Lights.h" />
     <ClInclude Include="..\..\src\Common\Mesh.h" />
+    <ClInclude Include="..\..\src\Renderer\BufferObjects.h" />
     <ClInclude Include="..\..\src\Renderer\Renderer.h" />
     <ClInclude Include="..\..\src\Tools\Input\Input.h" />
     <ClInclude Include="..\..\src\Tools\Logger\Logger.h" />
@@ -146,6 +148,16 @@ xcopy "$(SolutionDir)..\..\assets" "$(ProjectDir)assets" /f /d /e /i /y
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_rectpack.h" />
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_textedit.h" />
     <ClInclude Include="..\..\ThirdParty\imgui-1.89.3\imstb_truetype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\shaders\default.frag" />
+    <None Include="..\..\assets\shaders\default.vert" />
+    <None Include="..\..\assets\shaders\BRDFLighting.frag" />
+    <None Include="..\..\assets\shaders\DeferredQuadPass.vert" />
+    <None Include="..\..\assets\shaders\emissive.frag" />
+    <None Include="..\..\assets\shaders\emissive.vert" />
+    <None Include="..\..\assets\shaders\GBufferFill.frag" />
+    <None Include="..\..\assets\shaders\GBufferFill.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

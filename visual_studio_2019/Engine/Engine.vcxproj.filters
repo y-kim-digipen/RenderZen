@@ -41,6 +41,9 @@
     <Filter Include="App\Components">
       <UniqueIdentifier>{faa0d173-e8cb-460d-99eb-7ba514e6dbd8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{da18488c-5c9d-4dd1-b8bb-f034fe707aee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ThirdParty\imgui-1.89.3\imgui.cpp">
@@ -77,7 +80,7 @@
     <ClCompile Include="..\..\src\Application\Application.cpp">
       <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Application\Scene\DeferredPassTestScene.cpp">
+    <ClCompile Include="..\..\src\Application\Scene\PBRLightingScene.cpp">
       <Filter>App\Scene</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Tools\Input\Input.cpp">
@@ -133,7 +136,7 @@
     <ClInclude Include="..\..\src\Common\Mesh.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Application\Scene\DeferredPassTestScene.h">
+    <ClInclude Include="..\..\src\Application\Scene\PBRLightingScene.h">
       <Filter>App\Scene</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Application\Scene\IScene.h">
@@ -157,5 +160,37 @@
     <ClInclude Include="..\..\src\Application\Components\Geometry.h">
       <Filter>App\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Common\Lights.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Renderer\BufferObjects.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\shaders\default.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\default.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\BRDFLighting.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\DeferredQuadPass.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\emissive.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\emissive.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\GBufferFill.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\GBufferFill.vert">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -7,13 +7,12 @@
 #include "../Application.h"
 #include "../../Tools/Input/Input.h"
 
-#include <iostream>
 void CameraController::Update ( float dt ) {
 
     bool anyButtonPressed = false;
     if ( Input::Input::GetKeyboardButton ( GLFW_KEY_W ).IsDown () ) {
         postition += front * speed * dt;
-        anyButtonPressed |= true;
+        anyButtonPressed |=  true;
     }
     if ( Input::Input::GetKeyboardButton ( GLFW_KEY_S ).IsDown () )
     {
@@ -54,7 +53,7 @@ void CameraController::Update ( float dt ) {
     if( anyButtonPressed )
     {
         gpuData.viewMat = glm::lookAt ( postition, postition + front, up );
-        gpuData.projectionMat = glm::perspective ( glm::radians ( 45.0f ), ( float ) 1920 / ( float ) 1080, 0.1f, 100.0f );
+        gpuData.projectionMat = glm::perspective ( glm::radians ( 45.0f ), ( float ) 1920 / ( float ) 1080, 0.1f, 1000.0f );
         gpuData.camPos = postition;
         updated = false;
     }

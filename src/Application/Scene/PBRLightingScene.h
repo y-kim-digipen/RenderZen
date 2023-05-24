@@ -3,7 +3,6 @@
 
 #include "../Components/CameraController.h"
 #include "IScene.h"
-#include "../../visual_studio_2019/Engine/Light.h"
 
 struct ShaderProgram;
 struct Object;
@@ -21,7 +20,6 @@ public:
 
 private:
 	void LoadGBuffers ();
-	bool LoadShadowMap ();
 	void LoadGUI ();
 
 	//For quad render
@@ -30,19 +28,20 @@ private:
 
 	CameraController cameraController{};
 
-	ShaderProgram* pDeferredPassShaderProgram = NULL;
-	ShaderProgram* pCelShadingShaderProgram = NULL;
+	ubSceneLights sceneLights{};
 
-	unsigned cameraUBOID {};
-	unsigned directionalLightUBOID {};
+	ShaderProgram* pGBufferFillShaderProgram = NULL;
+	ShaderProgram* pBRDFLightingShaderProgram = NULL;
 
-	unsigned FBO;
-	unsigned positionTextureHandle;
-	unsigned normalTextureHandle;
-	unsigned colorTextureHandle;
+	unsigned cameraUBO {};
+	unsigned objectUBO {};
+	unsigned sceneLightsUBO {};
+
+	unsigned gBufferFillFBO;
+	unsigned gBuffer0;
+	unsigned gBuffer1;
+	unsigned gBuffer2;
 	unsigned depthTextureHandle;
-
-
 
 
 	unsigned shadowMapFBO;
@@ -50,7 +49,6 @@ private:
 	//Pipeline* pForwardPass;
 
 	//Texture* pFinalTexture;
-	DirectionalLight directionalLight{};
 	
 };
 

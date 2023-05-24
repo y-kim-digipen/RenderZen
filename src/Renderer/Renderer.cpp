@@ -173,10 +173,7 @@ bool Renderer::Init()
 
 bool Renderer::Load()
 {
-	glEnable ( GL_MULTISAMPLE );
-
-
-	glClearColor ( 0.0f, 0.0f, 0.0f, 1.0f );
+	//glEnable ( GL_MULTISAMPLE );
 
 	//Load GUI
 	const char* glsl_version = "#version 450";
@@ -195,7 +192,7 @@ bool Renderer::Load()
 	shaderLoadDesc =  { "assets/shaders/GBufferFill.vert", "assets/shaders/GBufferFill.frag" };
 	shaderLoadRes &= LoadShader ( shaderLoadDesc );
 
-	shaderLoadDesc = { "assets/shaders/DeferredPass.vert", "assets/shaders/DeferredCelShading.frag" };
+	shaderLoadDesc = { "assets/shaders/DeferredQuadPass.vert", "assets/shaders/BRDFLighting.frag" };
 	shaderLoadRes &= LoadShader ( shaderLoadDesc );
 
 	return shaderLoadRes;

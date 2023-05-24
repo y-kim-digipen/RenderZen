@@ -10,7 +10,7 @@
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "Scene/DeferredPassTestScene.h"
+#include "Scene/PBRLightingScene.h"
 #include "../Tools/Input/Input.h"
 
 Application gApplication;
@@ -30,14 +30,22 @@ Mesh* LoadMesh ( const char* meshPath ) {
 
     Mesh* pMesh = new Mesh;
 
-                                           // If the import failed, report it
+    // If the import failed, report it
+
     if ( !scene ) {
         //todo just for debugging
         assert ( false );
         return nullptr;
     }
 
-    for ( uint32_t i = 0, numMeshes = /*scene->mNumMeshes*/1; i < numMeshes; ++i ) {
+    //struct MeshEntry
+    //{
+
+    //    uint32_t vertexCount;
+    //    uint32_t indexOffset;
+    //};
+
+    for ( uint32_t i = 0, numMeshes = scene->mNumMeshes; i < numMeshes; ++i ) {
         aiMesh* pAiMesh = scene->mMeshes[ i ];
 
         bool hasPosition = pAiMesh->HasPositions ();
@@ -49,29 +57,31 @@ Mesh* LoadMesh ( const char* meshPath ) {
         assert ( hasIndex );
 
         unsigned mNumVertices = pAiMesh->mNumVertices;
-        pMesh->mPositions.resize ( pAiMesh->mNumVertices );
-        pMesh->mNormals.resize ( pAiMesh->mNumVertices );
 
-        std::memcpy ( pMesh->mPositions.data (), pAiMesh->mVertices, sizeof ( glm::vec3 ) * mNumVertices );
-        std::memcpy ( pMesh->mNormals.data (), pAiMesh->mNormals, sizeof ( glm::vec3 ) * mNumVertices );
-
-        if ( hasUV ) {
-            pMesh->mUVs.resize ( pAiMesh->mNumVertices );
-            std::memcpy ( pMesh->mUVs.data (), pAiMesh->mTextureCoords[ 0 ], sizeof ( glm::vec2 ) * mNumVertices );
+        //Handling vertex
+        for(uint32_t vertexIndex = 0; vertexIndex < mNumVertices; ++vertexIndex )
+        {
+            glm::vec3 vPosition = *( glm::vec3* ) &pAiMesh->mVertices[ vertexIndex ].x;
+            pMesh->mPositions.push_back ( vPosition );
+            glm::vec3 vNormal = *( glm::vec3* ) &pAiMesh->mNormals[ vertexIndex ].x;
+            pMesh->mNormals.push_back ( vNormal );
         }
-
-        unsigned mNumIndices = pAiMesh->mNumFaces * 3;
-        pMesh->mIndices.resize ( mNumIndices );
+        
+        if ( hasUV ) {
+            for ( uint32_t vertexIndex = 0; vertexIndex < mNumVertices; ++vertexIndex ) {
+                glm::vec2 uv = *((glm::vec2* ) & (pAiMesh->mTextureCoords[0]->x ));
+                pMesh->mUVs.push_back ( uv );
+            }
+        }
+        
         for ( uint32_t j = 0; j < pAiMesh->mNumFaces; ++j ) {
             aiFace& face = pAiMesh->mFaces[ j ];
             assert ( face.mNumIndices == 3 );
-            std::memcpy ( &pMesh->mIndices[ j * 3 ], face.mIndices, sizeof ( uint32_t ) * 3 );
+            pMesh->mIndices.push_back ( face.mIndices[ 0 ] );
+            pMesh->mIndices.push_back ( face.mIndices[ 1 ] );
+            pMesh->mIndices.push_back ( face.mIndices[ 2 ] );
         }
     }
-    // Now we can access the file's contents.
-    //DoTheSceneProcessing(scene);
-
-    // We're done. Everything will be cleaned up by the importer destructor
 
     return pMesh;
 }
@@ -85,7 +95,7 @@ bool Application::Init () {
 
 bool Application::Load () {
     const char* meshPath[] {
-    "assets/meshes/suzanne.fbx",
+    "assets/meshes/cube.gltf",
     "assets/meshes/sphere.gltf",
     //"assets/meshes/cube.gltf",
     "assets/meshes/capsule.gltf" };
@@ -111,10 +121,12 @@ bool Application::ShouldUpdate () {
     return true;
 }
 
+static float lastTime = 0;
 void Application::Update () {
     glfwPollEvents ();
-    float t = ( float ) glfwGetTime ();
-    pScene->Update ( t );
+    float curTime = ( float ) glfwGetTime () ;
+    pScene->Update ( curTime - lastTime );
+    lastTime = curTime;
 }
 
 void Application::Draw () {
